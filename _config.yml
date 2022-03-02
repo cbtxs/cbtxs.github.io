@@ -1,5 +1,8 @@
 # The Site Configuration
 
+
+title: cbtxs
+
 # Import the theme
 theme: jekyll-theme-chirpy
 
