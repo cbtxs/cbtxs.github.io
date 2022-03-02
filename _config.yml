@@ -17,11 +17,10 @@ timezone: Asia/Shanghai
 # --------------------------
 title: cbtxs                          # the main title
 
-tagline: computer science student, emacs enthusiast, keyboard lover. occasionally nerdy. # it will display as the sub-title
+tagline: computational mathematics student. # it will display as the sub-title
 
 
 description: >-                        # used by seo meta and the atom feed
-  computer science student, emacs enthusiast, keyboard lover. occasionally nerdy.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://cbtxs.github.io'
@@ -76,7 +75,7 @@ theme_mode:   # [light|dark]
 img_cdn: ''
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://avatars.githubusercontent.com/u/36686900?v=4
+avatar: "assets/image/head_image.svg"
 
 # boolean type, the global switch for ToC in posts.
 toc: true
