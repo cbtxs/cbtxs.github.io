@@ -10,6 +10,10 @@ baseurl: ''
 # the HTML language tag › https://www.w3.org/International/questions/qa-choosing-language-tags
 lang: en-US
 
+
+# math
+markdown: kramdown
+
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
 timezone: Asia/Shanghai
 
@@ -21,6 +25,7 @@ tagline: computational mathematics student. # it will display as the sub-title
 
 
 description: >-                        # used by seo meta and the atom feed
+  computer science student, emacs enthusiast, keyboard lover. occasionally nerdy.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://cbtxs.github.io'
@@ -81,7 +86,7 @@ avatar: "assets/image/head_image.svg"
 toc: true
 
 disqus:
-  comments: true  # boolean type, the global switch for posts comments.
+  comments: false  # boolean type, the global switch for posts comments.
   shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 paginate: 10
