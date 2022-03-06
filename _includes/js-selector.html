@@ -62,7 +62,7 @@
 {% capture script %}/assets/js/dist/{{ type }}.min.js{% endcapture %}
 <script defer src="{{ script | relative_url }}"></script>
 
-{% if page.math %}
+{% if page.mathjax %}
   <!-- MathJax -->
   <script>
   /* see: <https://docs.mathjax.org/en/latest/options/input/tex.html#tex-options> */
@@ -82,6 +82,26 @@
   <script src="{{ site.data.assets[origin].polyfill.js }}"></script>
   <script id="MathJax-script" async src="{{ site.data.assets[origin].mathjax.js }}">
   </script>
+{% endif %}
+
+{% if page.pseudocode %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js">
+  </script>
+{% endif %}
+
+{% if page.katex %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" 
+        integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" 
+        crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" 
+        integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" 
+        crossorigin="anonymous">
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" 
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);">
+    </script>
 {% endif %}
 
 <!-- commons -->
