@@ -11,27 +11,44 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 
 /* append your custom style below */
 
+/*
 body {
       font-family: "Times New Roman", Times, serif;
-}
+}*/
+
 
 .theorem {
     display: block;
     margin: 12px 0;
     font-size: 18px;
-    font-style: normal;
+    font-style: italic;
 }
 .theorem:before {
     content: "Theorem.";
     font-weight: bold;
     font-style: normal;
     font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.property {
+    display: block;
+    margin: 12px 0;
+    font-size: 18px;
+    font-style: italic;
+}
+.property:before {
+    content: "Property.";
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .lemma {
     display: block;
     margin: 12px 0;
-    font-style: normal;
+    font-style: italic;
 }
 .lemma:before {
     content: "Lemma.";
@@ -41,7 +58,7 @@ body {
 .proof {
     display: block;
     margin: 12px 0;
-    font-style: normal;
+    font-style: italic;
 }
 .proof:before {
     content: "Proof.";
@@ -56,14 +73,16 @@ body {
 .definition {
     display: block;
     margin: 12px 0;
-    font-style: normal;
+    font-style: italic;
 }
 .definition:before {
     content: "Definition.";
     font-weight: bold;
     font-style: normal;
     font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
 }
+
 
 
 
