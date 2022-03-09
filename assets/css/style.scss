@@ -63,8 +63,9 @@ body {
 .proof:before {
     content: "Proof.";
     font-weight: bold;
-    font-style: normal;
+    font-style: italic;
     font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
 }
 .proof:after {
     content: "\25FC";
