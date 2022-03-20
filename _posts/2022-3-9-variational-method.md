@@ -134,10 +134,32 @@ $$
 </div>
 
 
+## **迭代算法**
+考虑问题:
+
+$$
+\mathcal L(u) = f
+$$
+
+记 $$\mathcal L$$ 的变分为 $$\mathcal L_u$$, 任选 $$u_0$$, 
+令 $$\delta u = u - u_0$$, 则有
+
+$$
+\mathcal L(u) = \mathcal L(u_0+\delta u) = \mathcal L(u_0) + \mathcal L_u(\delta u) + 
+O(||\delta u||) = f
+$$
+
+舍去高阶项后得到一个以 $$\delta u$$ 为为质量的线性问题:
+
+$$
+\mathcal L_u(\delta u) = f - \mathcal L(u_0)
+$$
+
+令 $$u_1 = u_0 + \delta u$$, 得到一个迭代格式.
 
 
-
-
+## **微分几何的角度**
+从微分几何的角度来看, 泛函的变分是一个对偶矢量场.
 
 
 
