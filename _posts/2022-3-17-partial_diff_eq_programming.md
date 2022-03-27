@@ -75,7 +75,7 @@ $$
 将 $$\Omega$$ 离散为以下网格:
 
 <div align='center'>
-<img src = "../../image/5d.svg" width=360>
+<img src = "../../image/5d.svg" width=250>
 </div>
 
 现在按上面求解二元一次方程的方法编写五点差分程序求解这个 Poisson 方程. 
@@ -245,12 +245,6 @@ er=np.linalg.norm(u[1:-1,1:-1]-kkk.T[1:-1,1:-1],ord=1)/(n-1)**2
 err=abs(u[1:-1,1:-1]-kkk.T[1:-1,1:-1]).max()
 print(err)
 ```
-
-
-
-
-
-
 
 
 
