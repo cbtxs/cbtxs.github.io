@@ -2,7 +2,7 @@
 title: 连续介质力学(一)：张量分析基础
 author: cbtxs
 date: 2022-03-04 22:19:01 +0800
-katex: true
+mathjax: true
 categories: [连续介质力学]
 tags: [连续介质力学, 微分几何, 张量分析]
 ---
@@ -16,13 +16,16 @@ tags: [连续介质力学, 微分几何, 张量分析]
 《连续介质力学》这本书, 书中重点讲的是 $$\mathbb R^3$$ 中的微分几何, 
 像导数算符, 克氏符之前都是抽象的概念,
 现在终于找到了具体的对应, 解决了很多我以前的疑惑,
-书中基本上就把对偶向量当作了向量, 所以所有的 $$(l, m)$$ 型张量都被当成了 $$(l+m,
-0)$$ 型张量. 
 
-本文是记录我在《连续介质力学》这本书的数学部分学习中学到的知识点以及自己的想法, 
-文中有很多我将本书的知识点知识与抽象的微分几何知识的对应, 可能有误, 
-有读者看到的话望给我发邮件指出, 谢谢!
+本书的一的特点是, 基本上就把对偶向量当作了向量, 所以所有的 
+$$(l, m)$$ 型张量都被当成了 $$(l+m, 0)$$ 型张量, 他们的基都是 
 
+$$
+\mathrm d\boldsymbol e_{i_0} \otimes
+\mathrm d\boldsymbol e_{i_1} \otimes\dots\otimes
+\mathrm d\boldsymbol e_{i_{l+m-1}} 
+, \quad i_0, i_1, \dots, i_{l+m-1} \in \{0, 1, 2\}
+$$
 
 ## **1. Kronecker 符号, Levi-Civita 符号**
 
@@ -139,10 +142,10 @@ $$
 $$
 
 其中 $$\lambda$$ 是 $$\boldsymbol S$$ 的特征值. 
-$$\boldsymbol S$$ 的特征值存在的充要条件是:
+$$\lambda$$ 是 $$\boldsymbol S$$ 的特征值存在的充要条件是:
 
 $$
-\mathrm{det}(\boldsymbol{S - \lambda I}) = 0
+\mathrm{det}(\boldsymbol{S} - \lambda \boldsymbol I) = 0
 $$
 
 记
@@ -153,7 +156,44 @@ I_2 = \frac{1}{2}[(\mathrm{tr}\boldsymbol S)^2 - \mathrm{tr}S^2], \quad
 I_3 = \mathrm{det} \boldsymbol S
 $$
 
+则:
 
+$$
+\mathrm{det}(\boldsymbol{S} - \lambda \boldsymbol I) = \lambda^3 - I_1\lambda^2
++ I_2\lambda -I_3
+$$
+
+<div class = "theorem">
+<b>哈密尔顿-凯莱定理</b>: 任何一个 $(n\times n)$ 的矩阵都满足其特征方程.
+</div>
+
+## 7. 二阶张量的微积分
+对于标量场 $$\phi$$, 定义其左右梯度如下:
+
+$$
+\nabla\otimes \phi = \frac{\partial \phi}{\partial x_i} \boldsymbol e_i, \quad
+\phi \otimes \nabla = \frac{\partial \phi}{\partial x_i} \boldsymbol e_i.
+$$
+
+对于向量场 $$\boldsymbol v$$, 定义其左右梯度如下:
+
+$$
+\nabla\otimes \boldsymbol v = 
+\frac{\partial v_j}{\partial x_i} \boldsymbol e_i \otimes \boldsymbol e_j, \quad
+\nabla\otimes \boldsymbol v = 
+\frac{\partial v_i}{\partial x_j} \boldsymbol e_i \otimes \boldsymbol e_j
+$$
+
+对于二阶张量场 $$\boldsymbol T$$, 定义其左右梯度如下:
+
+$$
+\nabla\otimes \boldsymbol T = 
+\frac{\partial T_{jk}}{\partial x_i} \boldsymbol e_i \otimes \boldsymbol e_j
+\otimes \boldsymbol e_k, \quad
+\nabla\otimes \boldsymbol T = 
+\frac{\partial T_{ij}}{\partial x_k} \boldsymbol e_i \otimes \boldsymbol e_j
+\otimes \boldsymbol e_k
+$$
 
 
 
