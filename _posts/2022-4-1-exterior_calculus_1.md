@@ -65,7 +65,7 @@ $$
 
 $$L^*$$ 称为 $$L$$ 的**拉回映射**, 意为将 $$W$$ 上的 $$k$$ 形式拉回 $$V$$ 上.
 
-拉回映射有传导性: 若 $$U \xrightarrow{K} V \xrightarrow{L} W$$, 则 
+拉回映射有**传导性**: 若 $$U \xrightarrow{K} V \xrightarrow{L} W$$, 则 
 $$\mathrm{Alt} W \xrightarrow{L^*} \mathrm{Alt} V \xrightarrow{K^*} \mathrm{Alt} U$$. 
 且有: **拉回的复合等于复合的拉回, 外积的拉回等于拉回的外积:**
 
@@ -73,6 +73,20 @@ $$
 K^* \circ L^* = (L\circ K)^*, \quad 
 L^*(\omega\wedge\eta) = L^* \omega \wedge L^* \eta
 $$
+
+特殊地, 当 $$V \subset W$$, $$W$$ 上定义了度量, 
+则存在一个恒同映射 $$i : V \to W$$, 正交投影映射 
+$$\pi : W \to V$$, 即 $$W \xrightarrow{\pi} V \xrightarrow{i} W$$, 
+则有 $$\mathrm{Alt} W \xrightarrow{i^*} \mathrm{Alt} V 
+\xrightarrow{\pi^*} \mathrm{Alt} U$$. 
+$$k$$ 形式 $$\omega \in \mathrm{Alt}W$$ 对于空间 $$V$$ 的切向分量为 
+
+$$
+(\pi^*i^* \omega)(v_1, v_2, \cdots, v_k) = \omega(\pi v_1, \pi v_2, \cdots, \pi
+v_k)
+$$
+
+法向分量为 $$\omega - \pi^*i^* \omega$$.
 
 
 
