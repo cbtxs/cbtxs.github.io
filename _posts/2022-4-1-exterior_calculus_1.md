@@ -66,7 +66,7 @@ $$
 $$L^*$$ 称为 $$L$$ 的**拉回映射**, 意为将 $$W$$ 上的 $$k$$ 形式拉回 $$V$$ 上.
 
 拉回映射有**传导性**: 若 $$U \xrightarrow{K} V \xrightarrow{L} W$$, 则 
-$$\mathrm{Alt} W \xrightarrow{L^*} \mathrm{Alt} V \xrightarrow{K^*} \mathrm{Alt} U$$. 
+$$\mathrm{Alt} W \xrightarrow{L^*} \mathrm{Alt} V \xrightarrow{K^*} \mathrm{Alt} W$$. 
 且有: **拉回的复合等于复合的拉回, 外积的拉回等于拉回的外积:**
 
 $$
