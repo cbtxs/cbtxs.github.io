@@ -88,6 +88,46 @@ $$
 **事实上在微分几何中, 令** $$V = \mathbb E^3$$, **真矢量对应于** $$\Lambda V$$ 
 **中的元素, 赝矢量对应于 $$\Lambda^2 V$$ 中的元素.**
 
+可以认为真矢量的基为 $$\boldsymbol e_0, \boldsymbol e_1, \boldsymbol
+e_2$$, 真标量的基为 $$1$$, 而赝矢量的基为 
+$$ \boldsymbol e_1 \times \boldsymbol e_2, \boldsymbol e_2 \times \boldsymbol e_0
+, \boldsymbol e_0 \times \boldsymbol e_1$$, 赝标量的基为 $$ \boldsymbol e_0
+\cdot (\boldsymbol e_1 \times \boldsymbol e_2)$$
+
+令
+$$
+\boldsymbol u = u_i \boldsymbol e_i, 
+\boldsymbol v = v_i \boldsymbol e_i
+$$
+则 
+
+$$ 
+\begin{aligned}
+\boldsymbol u \times \boldsymbol v & = u_i \boldsymbol e_i \times v_j \boldsymbol e_j\\
+& = (u_0 v_1 - v_0 u_1)\boldsymbol e_0 \times \boldsymbol e_1 + 
+(u_1 v_2 - v_2 u_1)\boldsymbol e_1 \times \boldsymbol e_2 + 
+(u_2 v_0 - v_0 u_2)\boldsymbol e_2 \times \boldsymbol e_0
+\end{aligned}
+$$
+
+令 $$ \boldsymbol e_i' = -\boldsymbol e_i$$, 则: 
+$$
+\boldsymbol u = -u_i \boldsymbol e_i', 
+\boldsymbol v = -v_i \boldsymbol e_i'
+$$
+
+$$ 
+\begin{aligned}
+\boldsymbol u \times \boldsymbol v & = (-u_i) \boldsymbol e_i' \times (-v_j) \boldsymbol e_j'\\
+& = (u_0 v_1 - v_0 u_1)\boldsymbol e_0' \times \boldsymbol e_1' + 
+(u_1 v_2 - v_2 u_1)\boldsymbol e_1' \times \boldsymbol e_2' + 
+(u_2 v_0 - v_0 u_2)\boldsymbol e_2' \times \boldsymbol e_0'\\
+& = (u_0 v_1 - v_0 u_1)\boldsymbol e_0 \times \boldsymbol e_1 + 
+(u_1 v_2 - v_2 u_1)\boldsymbol e_1 \times \boldsymbol e_2 + 
+(u_2 v_0 - v_0 u_2)\boldsymbol e_2 \times \boldsymbol e_0
+\end{aligned}
+$$
+
 ## 3. 逆变矢量, 协变矢量
 
 对于一个线性空间 $$V$$, 其上的所有线性泛函组成其 **对偶空间(共轭空间)** $$V^*$$. 
