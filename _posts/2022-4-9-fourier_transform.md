@@ -81,7 +81,7 @@ $$
 \boldsymbol{E\hat u = u}
 $$
 
-其中 $$\boldsymbol{\hat u}$$ 可以看作是 $$N[c_{-N}, \cdots, c_{N-1}]$$ 的近似.
+其中 $$\boldsymbol{\hat u}$$ 可以看作是 $$2N[c_{-N}, \cdots, c_{N-1}]$$ 的近似.
 所以
 
 $$
@@ -109,12 +109,14 @@ $$\mathrm{fft}$$ 算法实现傅里叶插值.
 import scipy.fft as fft
 import numpy as np
 import matplotlib.pyplot as plt
+import sys
 
 def ff(x):
     """@
     @brief R -> R
     """
-    return (3+x)**2*np.sin(x)*np.cos(x)**2/(x+1)
+    return (3+x)**2*np.sin(x*20)*np.cos(x)**2/(x+1)**2
+
 
 #插值基函数
 def basis(x, N, l):
@@ -136,26 +138,37 @@ def fourier_interpolation(f, l, N):
     @param l : 定义域为 [0, l]
     @param N : 基函数的个数 2N
     """
-    x = np.linspace(0, l, 2*N)
+    x = np.linspace(0, l, 2*N, endpoint=False)
     fval = f(x)
     hfval = fft.fft(fval)
+    #hfval = dft(x, fval)
     def fourier_function(x):
         bval = basis(x, N, l)
         return bval@hfval/(2*N)
     return fourier_function
 
-l = np.pi/2
-N = 64
+def dft(x, fval):
+    """
+    @param dft 算法
+    """
+    x = x[:, None]@(np.r_[np.arange(N), -np.arange(1, N+1)[::-1]][None, :])
+    om = 2*np.pi/l
+    val = np.exp(-om*1j*x).T@fval
+    return val 
+
+
+l = 2*np.pi
+N = int(sys.argv[1])
 g = fourier_interpolation(ff, l, N)
 
-X = np.linspace(0, l, 1000)
-XX = np.linspace(0, l, 120)
+X = np.linspace(0, l, 10000)
 ffval = ff(X)
-gval = g(XX)
+gval = g(X)
 
 plt.grid(ls='--')
-plt.plot(X, ffval, 'b')
-plt.plot(XX, gval, 'x', c = 'r')
+plt.plot(X, ffval, c = 'r')
+plt.plot(X, gval, 'b')
+plt.legend(['u', 'u_interpolation'])
 plt.show()
 
 ```
