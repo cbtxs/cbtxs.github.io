@@ -23,8 +23,8 @@ tags: [tutorial]
 
 $$
 \begin{cases}
-3x + 4y = 5\\
-6x + 7y = 8
+x + y = 35\\
+2x + 4y = 94
 \end{cases}
 $$
 
@@ -40,8 +40,8 @@ $$
 $$
 \boldsymbol A = 
 \begin{pmatrix}
-3 & 4\\
-6 & 7
+1 & 1\\
+2 & 4
 \end{pmatrix}
 , \quad
 \boldsymbol X = 
@@ -52,8 +52,8 @@ y
 , \quad
 \boldsymbol b = 
 \begin{pmatrix}
-5 \\
-8 
+35 \\
+94 
 \end{pmatrix}
 $$
 

@@ -88,6 +88,24 @@ $$
 
 法向分量为 $$\omega - \pi^*i^* \omega$$.
 
+### **基**
+若 $$v_0, v_1, \cdots, v_{n-1}$$ 是 $$V$$ 的一组基, 定义递增序列集合 
+
+$$
+A_n^k = \{\sigma :  \{0, 1, \cdots, k-1\} \to \{0, 1, \cdots, n-1\}, 
+\ \sigma(i) \leq \sigma(i+1)\}
+$$ 
+
+则代数 $$k$$ 形式 $$\omega$$ 可被
+$$\{\omega(v_{\sigma(0)}, v_{\sigma(1)}, \cdots, v_{\sigma(k-1)}), 
+\sigma \in A_{n}^k\}$$
+唯一确定.
+
+根据 $$V$$ 的基可以定义 $$V^*$$ 的基 $$\{\mu_i\}_{i=0}^{k-1}$$, 满足:
+
+$$
+\mu_i(v_j) = \delta_{ij}
+$$
 
 
 

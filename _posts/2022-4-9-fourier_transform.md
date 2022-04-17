@@ -43,17 +43,17 @@ $$
 所以 $$\{e^{\omega i nx}\}_{n = -\infty}^{+\infty}$$ 
 可以认为是线性空间 $$L^1(0, l)$$ 的基函数(因为 $$L^1(0, l)$$ 
 上的任意函数都能用这组函数线性表出). 这组基函数有无穷多个,
-现在我们选取有限个基函数 $$\{e^{\omega i nx}\}_{n = -N}^{N}$$ 张成的空间来逼近 
+现在我们选取有限个基函数 $$\{e^{\omega i nx}\}_{n = -N}^{N-1}$$ 张成的空间来逼近 
 $$L^1(0, l)$$
 
 $$
-u(x) \approx \sum_{n = -N}^{N} c_n e^{\omega i nx}, \quad u(x) \in L^1(0, l)
+u(x) \approx \sum_{n = -N}^{N-1} c_n e^{\omega i nx}, \quad u(x) \in L^1(0, l)
 $$
 
 可以证明: (某个定理?)
 
 $$
-\lim_{N \to \infty} \sum_{n = -N}^{N} c_n e^{\omega i nx} = u(x), \quad \forall
+\lim_{N \to \infty} \sum_{n = -N}^{N-1} c_n e^{\omega i nx} = u(x), \quad \forall
 u(x) \in L^1(0, l)
 $$
 
@@ -69,7 +69,7 @@ $$
 记 $$u_j = u(x_j)$$, 根据前面的讨论我们有如下的近似:
 
 $$
-u_j \approx \sum_{n = -N}^N c_n e^{\omega in x_j}, \quad j = 0, 1,
+u_j \approx \sum_{n = -N}^{N-1} c_n e^{\omega in x_j}, \quad j = 0, 1,
 ...\cdots 2N-1
 $$
 
@@ -78,24 +78,24 @@ $$
 所以存在向量 $$ \boldsymbol{\hat u} = [\hat u_0, \cdots, \hat u_{2N-1}]$$ 使得:
 
 $$
-\boldsymbol{E\hat u = u}
+(2N)^{-1}\boldsymbol{E\hat u = u}
 $$
 
 其中 $$\boldsymbol{\hat u}$$ 可以看作是 $$2N[c_{-N}, \cdots, c_{N-1}]$$ 的近似.
 所以
 
 $$
-u(x) \approx N^{-1}\sum_{n = -N}^N \hat u_n e^{\omega in x}
+u(x) \approx (2N)^{-1}\sum_{n = -N}^{N-1} \hat u_n e^{\omega in x}
 $$
 
 这称为 $$u$$ 的傅里叶插值. 
 
 已知 $$ \boldsymbol u$$ 求解 $$\boldsymbol {\hat u}$$ 
 需要知道 $$\boldsymbol E^{-1}$$,
-而离散傅里叶变换非常优美的地方就在此: **$$\boldsymbol E^{-1}$$ 是已知的!**
+而离散傅里叶变换非常优美的地方就在于: **$$\boldsymbol E^{-1}$$ 是已知的!**
 
 $$
-\boldsymbol E^{-1} = (e^{-\omega \pi ijx_k})_{jk}
+\boldsymbol E^{-1} = (2N)^{-1}(e^{-\omega \pi ijx_k})_{jk}
 $$
 
 ## **快速傅里叶变换**
@@ -105,6 +105,25 @@ $$ \boldsymbol {\hat u}$$ 的计算复杂度降到 $$O(NlogN)$$
 
 在 `python` 语言的 `scipy` 库中已实现 $$\mathrm{fft}$$ 算法, 下图为 
 $$\mathrm{fft}$$ 算法实现傅里叶插值.
+
+1. 对函数$$f(x) = \frac{(3+x)^2\sin(20x)\cos^2(x)}{(x+1)^2}$$作傅里叶插值：
+<div align="center">
+<img src = "../../image/fft64.png">
+<b>N = 64</b>
+
+<img src = "../../image/fft128.png">
+<b>N = 128</b>
+</div>
+
+2. 对函数$$f(x) = \frac{1}{(x-5)^2+1}$$作傅里叶插值：
+<div align="center">
+<img src = "../../image/fft4.png">
+<b>N = 64</b>
+
+<img src = "../../image/fft8.png">
+<b>N = 128</b>
+</div>
+
 ```python
 import scipy.fft as fft
 import numpy as np
@@ -117,11 +136,10 @@ def ff(x):
     """
     return (3+x)**2*np.sin(x*20)*np.cos(x)**2/(x+1)**2
 
-
 #插值基函数
 def basis(x, N, l):
     """
-    @brief 插值基函数以 N = 4 为例, 基函数的排列方式为 
+    @brief 插值基函数以 N = 4 为例, 基函数的排列方式为
            [0, 1, 2, 3, -4, -3, -2, -1]
     """
     x = x[:, None]@(np.r_[np.arange(N), -np.arange(1, N+1)[::-1]][None, :])
@@ -132,8 +150,8 @@ def basis(x, N, l):
 #插值函数
 def fourier_interpolation(f, l, N):
     """
-    @brief 计算函数 $f$ 在格点处的值, 经过快速傅里叶变换 fft 
-           得到其傅里叶系数的近似 
+    @brief 计算函数 $f$ 在格点处的值, 经过快速傅里叶变换 fft
+           得到其傅里叶系数的近似
     @param f : 被插值的函数
     @param l : 定义域为 [0, l]
     @param N : 基函数的个数 2N
@@ -154,8 +172,7 @@ def dft(x, fval):
     x = x[:, None]@(np.r_[np.arange(N), -np.arange(1, N+1)[::-1]][None, :])
     om = 2*np.pi/l
     val = np.exp(-om*1j*x).T@fval
-    return val 
-
+    return val
 
 l = 2*np.pi
 N = int(sys.argv[1])
@@ -169,17 +186,7 @@ plt.grid(ls='--')
 plt.plot(X, ffval, c = 'r')
 plt.plot(X, gval, 'b')
 plt.legend(['u', 'u_interpolation'])
-plt.show()
-
 ```
-
-<div align="center">
-<img src = "../../image/fft64.png">
-<b>N = 64</b>
-
-<img src = "../../image/fft128.png">
-<b>N = 128</b>
-</div>
 
 
 
