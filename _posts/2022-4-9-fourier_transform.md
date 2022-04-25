@@ -50,7 +50,7 @@ $$
 u(x) \approx \sum_{n = -N}^{N-1} c_n e^{\omega i nx}, \quad u(x) \in L^1(0, l)
 $$
 
-可以证明: (某个定理?)
+可以证明: 
 
 $$
 \lim_{N \to \infty} \sum_{n = -N}^{N-1} c_n e^{\omega i nx} = u(x), \quad \forall
@@ -63,66 +63,76 @@ $$
 作 $$[0, l]$$ 的剖分 
 
 $$
-P_N = \{x_0 = 0, x_1 = \frac{l}{2N}, \cdots, x_i = i\frac{l}{2N}, \cdots, x_{2N} = l\}
+P_N = \{x_0 = 0, x_1 = \frac{l}{2N}, \cdots, x_k = k\frac{l}{2N}, \cdots, x_{2N} = l\}
 $$
 
-记 $$u_j = u(x_j)$$, 根据前面的讨论我们有如下的近似:
+记 $$u_j = u(x_j), j = 0, 1, \cdots, 2N-1$$, 根据前面的讨论我们有如下的近似:
 
 $$
-u_j \approx \sum_{n = -N}^{N-1} c_n e^{\omega in x_j}, \quad j = 0, 1,
-...\cdots 2N-1
+u_j \approx \sum_{n = -N}^{N-1} c_n e^{\omega \mathrm in x_j} = 
+\sum_{n=0}^{2N-1} c_n e^{\omega \mathrm inx_j}
+$$
+
+其中第二个等式的原因为: 
+
+$$
+e^{\omega \mathrm i 2N x_j} = e^{\mathrm i(2\pi j)}=1, \quad 
+e^{\omega \mathrm i nx_j} = e^{\omega \mathrm i (n+2N)x_j}
 $$
 
 令 $$\boldsymbol u = [u_0, \cdots, u_{2N-1}]^T, 
 \boldsymbol E = (e^{\omega ijx_k})_{jk}$$, 显然 $$ \boldsymbol E$$ 非奇异,
-所以存在向量 $$ \boldsymbol{\hat u} = [\hat u_0, \cdots, \hat u_{2N-1}]$$ 使得:
+所以存在向量 
+$$ \boldsymbol{\hat u} = 
+[\hat u_0, \hat u_1 \cdots, \hat u_{N-1}, 
+\hat u_{-N}, \hat u_{-N+1}, \cdots, \hat u_{-1}]$$ 使得:
 
 $$
 (2N)^{-1}\boldsymbol{E\hat u = u}
 $$
 
-其中 $$\boldsymbol{\hat u}$$ 可以看作是 $$2N[c_{-N}, \cdots, c_{N-1}]$$ 的近似.
+其中 $$\boldsymbol{\hat u}$$ 可以看作是 
+$$2N[c_0,  c_1 \cdots,  c_{N-1},  c_{-N},  c_{-N+1}, \cdots,  c_{-1}]$$ 的近似.
+
 所以
 
 $$
-u(x) \approx (2N)^{-1}\sum_{n = -N}^{N-1} \hat u_n e^{\omega in x}
+u(x) \approx (2N)^{-1}\sum_{n = -N}^{N-1} \hat u_n e^{\omega \mathrm in x}
 $$
 
-这称为 $$u$$ 的傅里叶插值. 
-
+y右端称为是 $$u$$ 的傅里叶插值. 
 已知 $$ \boldsymbol u$$ 求解 $$\boldsymbol {\hat u}$$ 
 需要知道 $$\boldsymbol E^{-1}$$,
 而离散傅里叶变换非常优美的地方就在于: **$$\boldsymbol E^{-1}$$ 是已知的!**
 
 $$
-\boldsymbol E^{-1} = (2N)^{-1}(e^{-\omega \pi ijx_k})_{jk}
+\boldsymbol E^{-1} = (2N)^{-1}(e^{-\omega \mathrm ijx_k})_{jk}
 $$
 
 ## **快速傅里叶变换**
 众所周知, 虽然 $$E^{-1}$$ 是已知的, 但是其计算复杂度为 $$O(N^2)$$, 上世纪 60
-年代出现了快速傅里叶变换 $$FFT$$ 将从 $$ \boldsymbol u$$ 到 
-$$ \boldsymbol {\hat u}$$ 的计算复杂度降到 $$O(NlogN)$$
-
+年代出现了快速傅里叶变换 $$\mathrm{fft}$$ 将从 $$ \boldsymbol u$$ 到 
+$$ \boldsymbol {\hat u}$$ 的计算复杂度降到 $$O(N\cdot logN)$$
 在 `python` 语言的 `scipy` 库中已实现 $$\mathrm{fft}$$ 算法, 下图为 
 $$\mathrm{fft}$$ 算法实现傅里叶插值.
 
-1. 对函数$$f(x) = \frac{(3+x)^2\sin(20x)\cos^2(x)}{(x+1)^2}$$作傅里叶插值：
-<div align="center">
-<img src = "../../image/fft64.png">
-<b>N = 64</b>
+1. 对 Runge 函数 $$f(x) = \frac{1}{(x-5)^2+1}$$作傅里叶插值：
+    <div align="center">
+    <img src = "../../image/fft4.png">
+    <b>N = 4</b>
 
-<img src = "../../image/fft128.png">
-<b>N = 128</b>
-</div>
+    <img src = "../../image/fft8.png">
+    <b>N = 8</b>
+    </div>
+2. 对函数$$f(x) = \frac{(3+x)^2\sin(20x)\cos^2(x)}{(x+1)^2}$$作傅里叶插值：
+    <div align="center">
+    <img src = "../../image/fft64.png">
+    <b>N = 64</b>
 
-2. 对函数$$f(x) = \frac{1}{(x-5)^2+1}$$作傅里叶插值：
-<div align="center">
-<img src = "../../image/fft4.png">
-<b>N = 64</b>
+    <img src = "../../image/fft128.png">
+    <b>N = 128</b>
+    </div>
 
-<img src = "../../image/fft8.png">
-<b>N = 128</b>
-</div>
 
 ```python
 import scipy.fft as fft
