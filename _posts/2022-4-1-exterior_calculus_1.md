@@ -47,7 +47,8 @@ $$
 外积是双线性的, 且满足 **反交换条件**:
 
 $$
-\omega \wedge \eta = (-1)^{ij}\eta \wedge \omega
+\omega \wedge \eta = (-1)^{ij}\eta \wedge \omega, \quad \omega \in
+\mathrm{Alt}^iV, \eta \in \mathrm{Alt}^jV
 $$
 
 记 $$\mathrm{Alt} V = \oplus_{k} \mathrm{Alt}^k V$$, 其在外积下组成一个代数称为
@@ -151,7 +152,7 @@ $$
 其中 $$\{v_i\}_{i=0}^{n-1} \subset V$$, 是 
 $$(\cdot, \cdot)$$ 下 $$V$$ 的标准正交基. 
 
-$$ \mathrm{Alt}^n$$ 维数为 1. 选择 $$V$$ 上的一组有序的标准正交基 $$\{v_i\}_{i=0}^{n-1}
+$$ \mathrm{Alt}^nV$$ 维数为 1. 选择 $$V$$ 上的一组有序的标准正交基 $$\{v_i\}_{i=0}^{n-1}
 $$ 作为**正的定向**, 在这组正交基上的值为 1 的 $$n$$ 形式被称为**体元**.
 
 ## **双向量**
@@ -186,7 +187,7 @@ $$
 其中 $$\omega \wedge \mu \in \mathrm{Alt}^n V$$, 上面的映射是在同构映射
 $$c\ \mathrm{vol} \to c$$ 的意义下. 
 
-所以 $$L_{\omega} \in (\mathrm{Alt}^{n-k})^*$$, 根据里斯表示定理, 存在 
+所以 $$L_{\omega} \in (\mathrm{Alt}^{n-k}V)^*$$, 根据里斯表示定理, 存在 
 $$\star \omega \in \mathrm{Alt}^{n-k} V$$, 使得 
 
 $$
