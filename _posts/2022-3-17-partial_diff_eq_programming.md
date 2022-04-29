@@ -5,7 +5,7 @@ date: 2022-03-17 11:02:14 +0800
 katex: true
 comments : true
 categories: [偏微分方程数值解]
-tags: [tutorial]
+tags: [偏微分方程, 偏微分方程数值解, 编程]
 ---
 
 ## **写在前面**

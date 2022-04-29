@@ -5,7 +5,7 @@ date: 2022-04-01 20:42:14 +0800
 katex: true
 comments : true
 categories: [偏微分方程数值解]
-tags: [tutorial]
+tags: [微分几何, 偏微分方程数值解, 有限元]
 ---
 
 ## **写在前面**

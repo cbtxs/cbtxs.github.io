@@ -4,7 +4,7 @@ author: cbtxs
 date: 2022-03-06 14:26:32 +0800
 katex: true
 categories: [微分几何]
-tags: [微分几何, 基础数学]
+tags: [微分几何]
 ---
 
 ## **写在前面**

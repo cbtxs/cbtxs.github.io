@@ -3,7 +3,7 @@ title: 变分原理
 author: cbtxs
 date: 2022-03-09 19:34:13 +0800
 mathjax: true
-categories: [泛函分析, 变分原理]
+categories: [泛函分析]
 tags: [泛函, 变分, 微分几何]
 ---
 
