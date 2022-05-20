@@ -65,8 +65,96 @@ $$
 即是 $$m$$ 次光滑的, 则称 $$\omega$$ 是一个 $$C^m$$ 微分 $$k$$ 形式,
 其组成的空间记为 $$C^m\Lambda^k(\Omega)$$.
 
+## **微分形式的积分**
+微分 $$1$$ 形式可以在线上积分, 微分 $$2$$ 形式可以在面上积分, 微分 $$3$$
+形式可以在体上积分.
 
+## **外微分**
+外微分算子 $$ \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega)$$ 
+是一个线性微分算子, 当 $$\Omega$$ 是 $$\R^n$$ 中的区域, 
+$$T_x\Omega$$ 是 $$\R^n$$, 取 $$\omega \in \Lambda^k(\Omega)$$
+则对于任意的光滑向量场 $$\{v_i\}_{i=0}^{k-1}$$, 定义:
 
+$$
+\mathrm{d}\omega(v_0, v_1, \dots, v_{k}) = \sum_{j=0}^{k}(-1)^{j}
+\partial_{v_j} \omega_x(v_0, \dots, \hat v_{j}, \dots, v_{k})
+$$
+
+其中 $$\hat{v}_j$$ 表示没有这一项. 因为映射
+
+$$
+x \to \omega_x(v_0, \dots, v_{k-1})
+$$
+
+是光滑的, 所以上面的定义是 well define 的. 这样定义的微分算子 $$ \mathrm{d}$$ 
+有以下两个性质:
+- $$ \mathrm{d} \circ \mathrm{d} = 0$$
+- $$\mathrm{d}(\omega\wedge\eta) = \mathrm{d}\omega\wedge\eta + (-1)^j \omega
+  \wedge \mathrm{d}\eta, \quad \forall \omega \in \Lambda^j(\Omega), \eta \in 
+  \Lambda^k(\Omega)$$
+
+这里推导一下当 $$\{\partial_{x_i}\}_{i=0}^{n-1}|_x$$ 是 $$T_x\Omega$$
+上的标准正交基时外微分的形式: 记 $$\{ \mathrm{d}{x_i}\}_{i=0}^{n-1}$$ 
+是一形式的基, 满足:
+
+$$
+\mathrm{d}x_i(\partial_{x_j}) = \delta_{ij}
+$$
+
+则有:
+
+$$
+\mathrm{d}x_0\wedge \mathrm{d}x_1\wedge\cdots\wedge
+\mathrm{d}x_{k-1}(\partial_{x_{\sigma(0)}}, \partial_{x_{\sigma(1)}}, \dots, 
+ \partial_{x_{\sigma(k-1)}}) = 
+ \begin{cases}
+ \mathrm{sign}(\sigma)  & \quad \sigma < k\\
+ \quad 0                & \quad \mathrm{other}
+ \end{cases}
+$$
+
+若 $$\omega = a \mathrm{d}x_0\wedge \mathrm{d}x_1\wedge\cdots\wedge
+\mathrm{d}x_{k-1}$$, 则:
+
+$$
+\mathrm{d}\omega(\partial_{x_0}, \partial_{x_1}, \dots, \partial_{x_{k-1}},
+\partial_{x_m}) =  (-1)^{k}(\partial_m a)
+$$
+
+所以:
+
+$$
+\begin{aligned}
+\mathrm{d}\omega 
+& = (-1)^k \partial_m a\ \mathrm{d}x_0\wedge \mathrm{d}x_1\wedge\cdots\wedge
+\mathrm{d}x_{k-1} \wedge \mathrm dx_m\\
+& = \mathrm{d}a \wedge\mathrm{d}x_0\wedge \mathrm{d}x_1\wedge\cdots\wedge
+\mathrm{d}x_{k-1}
+\end{aligned}
+$$
+
+## **拉回映射**
+对于光滑映射 $$\phi: \Omega \to \Omega'$$, 可以定义拉回映射 $$\phi^*$$, 将
+$$\Lambda^k(\Omega')$$ 映射到 $$\Lambda^k(\Omega)$$: 满足:
+
+$$
+(\phi^*\omega)_x(v_0, \dots, v_{k-1}) = \omega_{\phi(x)}(D\phi_x(v_1), \dots,
+D\phi(v_{k-1}))
+$$
+
+拉回映射有如下性质:
+- 保外积: $$\phi^*(\omega\wedge\eta) = \phi^*\omega \wedge \phi^*\eta$$
+- 保微分: $$\phi^*( \mathrm{d}\omega) = \mathrm{d}(\phi^*\omega)$$
+- 保积分: 当 $$\phi$$ 是一个保定向的微分同胚, 则有:
+    $$
+    \int_{\Omega}\phi^* \omega = \int_{\Omega'} \omega, \omega \in
+    \Lambda^k(\Omega')
+    $$
+
+当 $$\Omega$$ 是 $$\Omega$$ 的子流形, 那么包含映射 $$i : \Omega' \to \Omega$$
+的拉回映射写作 $$ \mathrm{Tr}_{\Omega, \Omega'} : \Lambda(\Omega) \to
+\Lambda(\Omega')$$, 当 $$\Omega' = \partial \Omega$$, 
+$$ \mathrm{Tr}_{\Omega, \partial\Omega}$$ 简写为 $$ \mathrm{Tr}$$.  
 
 
 
