@@ -29,6 +29,8 @@ $$T_{\phi(x)}\Omega'$$ 的映射.
 - 当 $$\Omega = \R$$, $$\phi$$ 是 $$\Omega$$ 上的一条曲线. 用 
   $$\frac{d\phi(t)}{dt}$$ 表示 $$D\phi_t(1)$$.
 
+这里是一个流形的作用: [流形的角度看待泛函的变分](https://cbtxs.github.io/posts/variational-method/)
+
 ## **微分形式**
 类似于切丛的概念, 可以定义**外形式丛**: $$(x, \mu)$$, 其中 $$x\in \Omega, \mu
 \in \mathrm{Alt}^k T_x\Omega$$. 一个微分 $$k$$ 形式就是一种外形式丛, 即:
@@ -151,10 +153,200 @@ $$
     \Lambda^k(\Omega')
     $$
 
-当 $$\Omega$$ 是 $$\Omega$$ 的子流形, 那么包含映射 $$i : \Omega' \to \Omega$$
-的拉回映射写作 $$ \mathrm{Tr}_{\Omega, \Omega'} : \Lambda(\Omega) \to
+当 $$\Omega'$$ 是 $$\Omega$$ 的子流形, 那么包含映射 $$i : \Omega' \to \Omega$$
+的拉回映射写作 $$\mathrm{Tr}_{\Omega, \Omega'} : \Lambda(\Omega) \to
 \Lambda(\Omega')$$, 当 $$\Omega' = \partial \Omega$$, 
 $$ \mathrm{Tr}_{\Omega, \partial\Omega}$$ 简写为 $$ \mathrm{Tr}$$.  
+
+
+**现在我们来从微分几何的角度看待数学分析中的第一类曲面积分第二类曲面积分**
+
+记 $$\Omega$$ 是一个 3 维区域, 
+$$\partial\Omega$$ 上的面元是 $$\mathrm{d}S$$, 记 
+$$\mathrm{d}n = *( \mathrm{d}S)$$ 是一个 $$1-$$ 形式, 显然 
+$$n$$ 就是 $$\partial \Omega$$ 的外法向, $$\mathrm{d}S$$ 满足:
+$$*(\mathrm{d}S\wedge \mathrm{d}n) = 1$$, 若一个 $$2-$$ 形式 
+$$\omega = f_0 \mathrm{d}y \wedge \mathrm{d}z + 
+f_1 \mathrm{d}z \wedge \mathrm{d}x + f_2 \mathrm{d}x\wedge \mathrm{d}y$$, 
+在数学分析中有:
+
+$$
+\int_{\partial \Omega} (f_0, f_1, f_2) \cdot \boldsymbol{n} \mathrm{d}S = 
+\int_{\partial \Omega} f_0 \mathrm{d}y \mathrm{d}z + f_1 \mathrm{d}z \mathrm{d}x
+ + f_2 \mathrm{d}x \mathrm{d}y
+$$
+
+事实上有:
+
+$$
+\int_{\partial \Omega} (f_0, f_1, f_2) \cdot \boldsymbol{n} \mathrm{d}S = 
+\int_{\partial \Omega} *\omega(n) \mathrm{d}S
+$$
+
+$$
+\int_{\partial \Omega} f_0 \mathrm{d}y \mathrm{d}z + f_1 \mathrm{d}z \mathrm{d}x
+ + f_2 \mathrm{d}x \mathrm{d}y
+  = \int_{\partial \Omega} \omega
+$$
+
+因为 $$\Lambda^2 \partial\Omega$$ 的基只有一个, 就是 $$\mathrm{d}S$$, 所以 
+$$\mathrm{Tr}\omega = k \mathrm{d}S$$, 记 $$v_1, v_2$$ 是 $$\partial \Omega$$
+上的单位正交切向量场, 满足 $$\mathrm{d}S(v_1, v_2) = 1$$, 则 $$v_1, v_2, n$$
+组成了 $$\Omega$$ 上的单位正交切向量场, 则有:
+
+$$ 
+*\omega(n) = \omega(v_1, v_2) = \mathrm{Tr} \omega(v_1, v_2) = k
+\mathrm{d}S(v_1, v_2) = k
+$$
+
+$$
+\mathrm{Tr}\omega = *\omega(n) \mathrm{d}S
+$$
+
+所以第一类曲线积分曲面积分之间的关系就是**一个 $$2-$$ 形式的积分和这个 $$2-$$ 
+形式的迹的积分:**
+
+$$
+\int_{\partial \Omega} \omega = \int_{\partial \Omega} \mathrm{Tr}\omega
+$$
+
+## **Stokes 定理**
+
+$$
+\int_{\Omega} \mathrm{d}\omega = \int_{\partial \Omega} \mathrm{Tr}\omega
+, \quad \forall\ \omega \in \Lambda^{n-1}\Omega
+$$
+
+结合**莱布尼茨定理**, 若 
+$$\omega \in \Lambda^k\Omega, \ \eta \in \Lambda^{n-k-1}\Omega$$:
+
+$$
+\int_{\Omega} \mathrm{d}\omega \wedge \eta = 
+(-1)^{k-1}\int_{\Omega} \omega \wedge \mathrm{d}\eta 
++ \int_{\partial\Omega} \mathrm{Tr}\omega\wedge \mathrm{Tr}\eta
+$$
+
+## **Interior product**
+
+$$
+(\omega\lrcorner v)_x = \omega_x \lrcorner v_x
+$$
+
+## **内积**
+对于两个 $$k-$$ 形式 $$\omega, \eta$$ 定义其内积:
+
+$$
+\langle \omega,  \eta \rangle_{L^2\Lambda^k} = 
+\int_{\Omega} \langle\omega_x, \eta_x \rangle \mathrm{vol}
+ = \int_{\Omega} \omega \wedge *\eta
+$$
+
+在这个内积下, $$\Lambda^{k}\Omega$$ 中的一部分元素定义了一个 Hilbert 空间
+$$L^2\Lambda^k\Omega$$.
+
+## **Sobolev 空间的微分形式** 
+现在考虑没有那么光滑的微分形式, 对于一个外形式丛 $$\omega = (x, \omega_x)$$, 
+若映射 
+
+$$
+x \to \omega_x(v_0(x), \cdots, v_{k-1}(x))
+$$
+
+对于任意光滑向量场 $$\{v_i\}_{i=0}^{k-1}$$ 属于 $$H^m(\Omega)$$, 
+则称 $$\omega$$ 是一个 $$H^m$$ 微分 $$k$$ 形式,
+其组成的空间记为 $$H^m\Lambda^k(\Omega)$$.
+
+现在定义另一个 Hilbert 空间:
+
+$$
+H\Lambda^k(\Omega) := \{\omega \in L^2\Lambda^k(\Omega)| \mathrm{d}\omega
+\in L^2\Lambda^{k+1}(\Omega)\}
+$$
+
+其范数定义为:
+
+$$
+||\omega||_{H\Lambda^k}^2 = ||\omega||_{L^2\Lambda^k}^2 + 
+|| \mathrm{d}\omega||_{L^2\Lambda^{k+1}}
+$$
+
+其中 $$H\Lambda^0(\Omega)$$ 对应于 $$H^1\Lambda^0(\Omega)$$, 
+$$H\Lambda^{n}(\Omega)$$ 对应于 $$L^2\Lambda^n(\Omega)$$
+
+
+## **de Rham 复形**
+de Rham 复形是一列空间和映射:
+
+$$
+0 \to \Lambda^0(\Omega) \xrightarrow{ \mathrm{d}}
+ \Lambda^1(\Omega) \xrightarrow{ \mathrm{d}} \cdots \xrightarrow{ \mathrm{d}}
+ \Lambda^n(\Omega) \to 0
+$$
+
+因为 $$\mathrm{d}\circ \mathrm{d} = 0$$, 所以 $$\forall k \in \{0, 1, \cdots, n\}$$:
+
+$$
+\mathcal{R}( \mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^k(\Omega)) \subset
+\mathcal{N}( \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega))
+$$
+
+所以称这个函数空间和映射的序列为一个 **上链复形**. de Rham 上同调空间 
+$$H_{dR}^k$$ 是零空间与像空间的商空间: 
+
+$$
+H_{dR}^k = \frac{\mathcal{N}
+(\mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega))}
+{\mathcal{R}
+(\mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^{k}(\Omega))}
+$$
+
+即: 当 $$w_1, w_2 \in 
+\mathcal{N}( \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega))$$
+且 $$w_1-w_2 \in 
+\mathcal{R}( \mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^k(\Omega))
+$$
+则在 $$H_{dR}^k$$ 中 $$w_1 = w_2 = [w_1]$$. $$H_{dR}^k$$ 的维数等于 $$\Omega$$
+的 **Betti 数**
+
+上面讲的是光滑的 de Rham 复形, 那么类似地可以定义 $$L^2$$ de Rham 复形:
+
+$$
+0 \to H\Lambda^0(\Omega) \xrightarrow{ \mathrm{d}}
+ H\Lambda^1(\Omega) \xrightarrow{ \mathrm{d}} \cdots \xrightarrow{ \mathrm{d}}
+ H\Lambda^n(\Omega) \to 0
+$$
+
+那么 $$H_{dR}^{k}$$ 同构于调和函数空间 $$\mathfrak{H}^k$$:
+
+$$
+\mathfrak{H}^{k}(\Omega) = \{\omega \in H\Lambda^{k}(\Omega)| \mathrm{d}\omega =
+0, \langle\omega, \mathrm{d}\eta\rangle_{L^2\Lambda^k} = 0\ \forall \eta \in
+H\Lambda^{k-1}(\Omega)\}
+$$
+
+事实上, $$\mathfrak{H}^{k}(\Omega) = 
+\mathcal{N}( \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega)) \cap
+\mathcal{R}^{\perp}( \mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^k(\Omega))$$
+所以这个同构关系很显然.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
