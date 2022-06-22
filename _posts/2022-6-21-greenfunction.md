@@ -19,7 +19,7 @@ $$
 \qquad \qquad (1)
 $$
 
-假设 $$G(x)$$ 满足:
+$$\Omega \in \mathbb R^3$$. 假设 $$G(x)$$ 满足:
 
 $$
 \begin{cases}
@@ -46,19 +46,95 @@ G(y-x)\cdot \boldsymbol n \ \mathrm dS
 $$
 
 所以只要我们能解出问题 (2) 中的 $$G(y)$$ 那么对于任意的 $$L^1$$ 函数 $$f, g$$
-都可以用上面的公式解决问题 (1).
+都可以用上面的公式解决问题 (1), 其中 $$G$$ 被称为是方程(1)的格林函数.
 
 ### 特殊区域的格林函数
-1. $$R^n$$ 上的格林函数
-对问题 (2) 第一项左右同时傅里叶变换:
+1. **$$R^3$$ 上的格林函数:** 对问题 (2) 第一项左右同时傅里叶变换:
 
-$$
--\hat{\Delta G} = \hat{\delta_0} \quad \Rightarrow \quad 
-k^2 \hat{G} = 1 \quad \Rightarrow \hat{G} = \frac{1}{k^2}
-$$
+    $$
+    -\hat{\Delta G} = \hat{\delta_0} \quad \Rightarrow \quad 
+    |\boldsymbol{k|}^2 \hat{G} = 1 \quad \Rightarrow \hat{G} = \frac{1}{|\boldsymbol{k}|^2}
+    $$
+
+    所以:
+
+    $$
+    \begin{aligned}
+        G(\boldsymbol{x}) & = -\frac{1}{(2\pi)^3}\int_{R^3} \frac{1}{|\boldsymbol{k}|^2} 
+        e^{i \boldsymbol{k}\cdot \boldsymbol{x}} \ \mathrm d \boldsymbol{k}\\
+        & = -\frac{1}{(2\pi)^3}\int_{0}^{+\infty} \int_{0}^{2\pi} \int_{0}^{\pi} \frac{1}{r^2} e^{i
+        r\cos(\phi)| \boldsymbol{x}|} r^2\sin(\phi)
+        \mathrm d \phi \mathrm d \theta \mathrm dr\\
+        &= -\frac{1}{(2\pi)^2} \int_{0}^{+\infty} 
+        \left(\int_{0}^{\pi} e^{ir\cos(\phi)|x|}
+        \mathrm d\cos(\phi)\right) \mathrm dr\\
+        & = -\frac{1}{2\pi^2| \boldsymbol{x}|} \int_{0}^{+\infty} \frac{\sin(r| \boldsymbol{x}|)}{r} \mathrm dr\\
+        & = -\frac{1}{4\pi | \boldsymbol{x}|}
+
+    \end{aligned}
+    $$
+
+
 
 ## **Helmholtz 方程的格林函数**
+考虑问题:
 
+$$
+\begin{cases}
+    \Delta u + \omega^2 u = f \quad \text{in} \ \Omega\\
+    u = g \quad \text{on} \ \partial \Omega
+\end{cases}
+\qquad \qquad (3)
+$$
+
+$$\Omega \in \mathbb R^3$$. 假设 $$G(x)$$ 满足:
+
+$$
+\begin{cases}
+    \Delta G + \omega^2 G = \delta_0 \quad \text{in} \ \Omega\\
+    G = 0 \quad \text{on} \ \partial \Omega
+\end{cases}
+\qquad \qquad (4)
+$$
+
+称 $$G$$ 是 方程(3) 的格林函数.
+
+### 特殊区域的格林函数
+1. **$$R^3$$ 上的格林函数:** 对问题 (2) 第一项左右同时傅里叶变换:
+
+    $$
+    \hat{\Delta G} + \omega^2 \hat{G} = \hat{\delta_0} \quad \Rightarrow \quad 
+    (\omega^2-|\boldsymbol{k|}^2) \hat{G} = 1 \quad 
+    \Rightarrow \hat{G} = \frac{1}{\omega^2-|\boldsymbol{k}|^2}
+    $$
+
+    所以:
+
+    $$
+    \begin{aligned}
+        G(\boldsymbol{x}) & = \frac{1}{(2\pi)^3}\int_{R^3} 
+        \frac{1}{\omega^2-|\boldsymbol{k}|^2} 
+        e^{i \boldsymbol{k}\cdot \boldsymbol{x}} \ \mathrm d \boldsymbol{k}\\
+        & = \frac{1}{(2\pi)^3}\int_{0}^{+\infty} 
+        \int_{0}^{2\pi} \int_{0}^{\pi} \frac{1}{\omega^2-r^2} e^{i
+        r\cos(\phi)| \boldsymbol{x}|} r^2\sin(\phi)
+        \mathrm d \phi \mathrm d \theta \mathrm dr\\
+        &= -\frac{1}{2(2\pi)^2} \int_{0}^{+\infty}\left(\frac{r}{\omega+r} +
+        \frac{r}{r-\omega}\right)
+        \left(\int_{0}^{\pi} e^{ir\cos(\phi)|x|}
+        \mathrm d\cos(\phi)\right) \mathrm dr\\
+        & = -\frac{1}{8\pi^2| \boldsymbol{x}|} 
+        \int_{-\infty}^{+\infty} 
+        \frac{\sin(r| \boldsymbol{x}|)}{\omega + r} \mathrm dr+
+        \int_{-\infty}^{+\infty} 
+        \frac{\sin(r| \boldsymbol{x}|)}{r - \omega} \mathrm dr\\
+        & = -\frac{1}{4\pi^2 | \boldsymbol{x}|} \int_{-\infty}^{+\infty} 
+        \frac{\sin(r| \boldsymbol{x}|)\cos(\omega |\boldsymbol{x}|)}{r} 
+        \ \mathrm dr\\
+        & = -\frac{1}{4\pi |\boldsymbol{x}|}\cos(\omega| \boldsymbol{x}|)
+
+    \end{aligned}
+    $$
 
 
 
