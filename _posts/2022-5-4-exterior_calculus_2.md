@@ -163,9 +163,9 @@ $$ \mathrm{Tr}_{\Omega, \partial\Omega}$$ 简写为 $$ \mathrm{Tr}$$.
 
 记 $$\Omega$$ 是一个 3 维区域, 
 $$\partial\Omega$$ 上的面元是 $$\mathrm{d}S$$, 记 
-$$\mathrm{d}n = *( \mathrm{d}S)$$ 是一个 $$1-$$ 形式, 显然 
+$$\mathrm{d}n = \star( \mathrm{d}S)$$ 是一个 $$1-$$ 形式, 显然 
 $$n$$ 就是 $$\partial \Omega$$ 的外法向, $$\mathrm{d}S$$ 满足:
-$$*(\mathrm{d}S\wedge \mathrm{d}n) = 1$$, 若一个 $$2-$$ 形式 
+$$\star(\mathrm{d}S\wedge \mathrm{d}n) = 1$$, 若一个 $$2-$$ 形式 
 $$\omega = f_0 \mathrm{d}y \wedge \mathrm{d}z + 
 f_1 \mathrm{d}z \wedge \mathrm{d}x + f_2 \mathrm{d}x\wedge \mathrm{d}y$$, 
 在数学分析中有:
@@ -180,7 +180,7 @@ $$
 
 $$
 \int_{\partial \Omega} (f_0, f_1, f_2) \cdot \boldsymbol{n} \mathrm{d}S = 
-\int_{\partial \Omega} *\omega(n) \mathrm{d}S
+\int_{\partial \Omega} \star\omega(n) \mathrm{d}S
 $$
 
 $$
@@ -195,12 +195,12 @@ $$\mathrm{Tr}\omega = k \mathrm{d}S$$, 记 $$v_1, v_2$$ 是 $$\partial \Omega$$
 组成了 $$\Omega$$ 上的单位正交切向量场, 则有:
 
 $$ 
-*\omega(n) = \omega(v_1, v_2) = \mathrm{Tr} \omega(v_1, v_2) = k
+\star\omega(n) = \omega(v_1, v_2) = \mathrm{Tr} \omega(v_1, v_2) = k
 \mathrm{d}S(v_1, v_2) = k
 $$
 
 $$
-\mathrm{Tr}\omega = *\omega(n) \mathrm{d}S
+\mathrm{Tr}\omega = \star\omega(n) \mathrm{d}S
 $$
 
 所以第一类曲线积分曲面积分之间的关系就是**一个 $$2-$$ 形式的积分和这个 $$2-$$ 
@@ -238,7 +238,7 @@ $$
 $$
 \langle \omega,  \eta \rangle_{L^2\Lambda^k} = 
 \int_{\Omega} \langle\omega_x, \eta_x \rangle \mathrm{vol}
- = \int_{\Omega} \omega \wedge *\eta
+ = \int_{\Omega} \omega \wedge \star\eta
 $$
 
 在这个内积下, $$\Lambda^{k}\Omega$$ 中的一部分元素定义了一个 Hilbert 空间
@@ -272,72 +272,6 @@ $$
 
 其中 $$H\Lambda^0(\Omega)$$ 对应于 $$H^1\Lambda^0(\Omega)$$, 
 $$H\Lambda^{n}(\Omega)$$ 对应于 $$L^2\Lambda^n(\Omega)$$
-
-
-## **de Rham 复形**
-de Rham 复形是一列空间和映射:
-
-$$
-0 \to \Lambda^0(\Omega) \xrightarrow{ \mathrm{d}}
- \Lambda^1(\Omega) \xrightarrow{ \mathrm{d}} \cdots \xrightarrow{ \mathrm{d}}
- \Lambda^n(\Omega) \to 0
-$$
-
-因为 $$\mathrm{d}\circ \mathrm{d} = 0$$, 所以 $$\forall k \in \{0, 1, \cdots, n\}$$:
-
-$$
-\mathcal{R}( \mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^k(\Omega)) \subset
-\mathcal{N}( \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega))
-$$
-
-所以称这个函数空间和映射的序列为一个 **上链复形**. de Rham 上同调空间 
-$$H_{dR}^k$$ 是零空间与像空间的商空间: 
-
-$$
-H_{dR}^k = \frac{\mathcal{N}
-(\mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega))}
-{\mathcal{R}
-(\mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^{k}(\Omega))}
-$$
-
-即: 当 $$w_1, w_2 \in 
-\mathcal{N}( \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega))$$
-且 $$w_1-w_2 \in 
-\mathcal{R}( \mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^k(\Omega))
-$$
-则在 $$H_{dR}^k$$ 中 $$w_1 = w_2 = [w_1]$$. $$H_{dR}^k$$ 的维数等于 $$\Omega$$
-的 **Betti 数**
-
-上面讲的是光滑的 de Rham 复形, 那么类似地可以定义 $$L^2$$ de Rham 复形:
-
-$$
-0 \to H\Lambda^0(\Omega) \xrightarrow{ \mathrm{d}}
- H\Lambda^1(\Omega) \xrightarrow{ \mathrm{d}} \cdots \xrightarrow{ \mathrm{d}}
- H\Lambda^n(\Omega) \to 0
-$$
-
-那么 $$H_{dR}^{k}$$ 同构于调和函数空间 $$\mathfrak{H}^k$$:
-
-$$
-\mathfrak{H}^{k}(\Omega) = \{\omega \in H\Lambda^{k}(\Omega)| \mathrm{d}\omega =
-0, \langle\omega, \mathrm{d}\eta\rangle_{L^2\Lambda^k} = 0\ \forall \eta \in
-H\Lambda^{k-1}(\Omega)\}
-$$
-
-事实上, $$\mathfrak{H}^{k}(\Omega) = 
-\mathcal{N}( \mathrm{d}: \Lambda^{k}(\Omega) \to \Lambda^{k+1}(\Omega)) \cap
-\mathcal{R}^{\perp}( \mathrm{d}: \Lambda^{k-1}(\Omega) \to \Lambda^k(\Omega))$$
-所以这个同构关系很显然.
-
-
-
-
-
-
-
-
-
-
 
 
 
