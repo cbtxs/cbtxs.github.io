@@ -1,5 +1,5 @@
 ---
-title: 有限元外微分(二)：同调代数
+title: 有限元外微分(三)：同调代数
 author: cbtxs
 date: 2022-08-07 17:04:14 +0800
 katex: true
@@ -240,4 +240,53 @@ $$
 显然有: $$ \mathring{\mathfrak{H}}^{n-k}(\Omega) = \star \mathfrak{H}^k(\Omega)$$
 
 ## **同调代数**
+同调代数将微分几何中的 $$ \mathrm{de Rham}$$
+上同调和代数拓扑中的单纯形同调结合起来，再很多种数学分支中都有应用.
+这里将会给出基本定义, 如上链映射, 上链投影和上链同伦.
+
+**上链复形**: 一个上链复形由一列向量空间(或者交换群)和一系列映射组成:
+
+$$
+\dots \to V_{k-1} \xrightarrow{d_{k-1}} V_k \xrightarrow{d_{k}} V_{k+1} \to
+\dots
+$$
+
+其中 $${\rm d}_{k+1}\circ \mathrm{d}_{k} = 0$$, 即称 $$V = \oplus V_{k}$$
+和次数加 $$1$$ 的映射 $${\rm d} : V \to V$$, 
+$${\rm d}_{k+1}\circ \mathrm{d}_{k} = 0$$ 为上链复形 $$(V, \mathrm{d})$$ .
+ 
+**注意:** 在有限元分析中讨论的复形, 当 $$k < 0$$ 或 $$k$$ 足够大时, $$V_k = 0$$.
+
+记 $$\mathcal{R}( \mathrm{d}_k)$$ 为 $$ \mathrm{d}_k$$ 的像空间, 称为
+**k-coboundaries**, $$\mathcal{N}(
+\mathrm{d}_k)$$ 为 $$ \mathrm{d}_k$$ 的零空间, 称为 **k-cocycles**. 商空间 $$H^k(V) := \mathcal{N}(
+\mathrm{d}_k)/\mathcal{R}( \mathrm{d}_{k-1})$$ 是 $$k$$ 次 **上同调空间**.
+
+给出两个上链 $$V, V'$$, 若一列映射 $$f_k: V_k \to V_k'$$ 满足 
+$$ \mathrm{d}_k'f_k = f_{k+1} \mathrm{d}_k$$ 则称其为 **上链映射**,
+对于一个上链映射 $$f$$, $$f_k$$ 会将 k-cocycles 映射为 k-cocycles, 
+将 k-coboundaries 映射为 k-coboundaries, 所以诱导了一个上同调空间间的映射: 
+$$H^k(f) : H^k(V) \to H^k(V')$$
+
+若 $$V'$$ 是 $$V$$ 的子链(即 $$V_k' \subset V_k$$), 则恒同映射 $$i : V' \to V$$
+是一个上链映射, 同时诱导了一个上同调映射 $$H^k(V') \to H^k(V)$$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
