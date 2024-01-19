@@ -190,12 +190,15 @@
 {% assign heading_levels = '2,3,4,5' | split: ',' %}
 {% assign _heading_content = _content %}
 
+{% assign heading_levels = '2,3,4,5' | split: ',' %}
+{% assign _heading_content = _content %}
+
 {% for level in heading_levels %}
-  {% capture mark_start %}<h{{ level }} id="{% endcapture %}
-  {% capture mark_end %}</h{{ level }}>{% endcapture %}
+  {% assign mark_start = '<h' | append: level | append: ' id="' %}
+  {% assign mark_end = '</h' | append: level | append: '>' %}
 
   {% if _heading_content contains mark_start %}
-    {% assign _new_content = nil %}
+    {% assign _new_content = null %}
     {% assign heading_snippets = _heading_content | split: mark_start %}
 
     {% for snippet in heading_snippets %}
@@ -205,20 +208,19 @@
       {% endif %}
 
       {% assign id = snippet | split: '"' | first %}
-      {% capture anchor %}<a href="#{{ id }}" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>{% endcapture %}
+      {% assign anchor = '<a href="#'
+        | append: id
+        | append: '" class="anchor text-muted"><i class="fas fa-hashtag"></i></a>'
+      %}
 
       {% assign left = snippet | split: mark_end | first %}
       {% assign right = snippet | slice: left.size, snippet.size %}
-      {% assign left = left | replace: '">', '"><span class="mr-2">' | append: '</span>' %}
+      {% assign left = left | replace_first: '">', '"><span class="me-2">' | append: '</span>' %}
 
-      {% assign _new_content = _new_content | append: mark_start
-          | append: left | append: anchor | append: mark_end | append: right
-      %}
-
+      {% assign _new_content = _new_content | append: mark_start | append: left | append: anchor | append: right %}
     {% endfor %}
 
     {% assign _heading_content = _new_content %}
-
   {% endif %}
 {% endfor %}
 
