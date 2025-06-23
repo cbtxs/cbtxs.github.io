@@ -2,7 +2,6 @@
 title: 个人简介
 icon: fas fa-info-circle
 order: 4
-katex: true
 ---
 
 <div style="display: flex; gap: 20px; align-items: center;">
@@ -53,8 +52,8 @@ katex: true
 主要负责有限元模块开发，实现了包括：
 - BDM 元、RT 元、Nédélec 元
 - Hu-Zhang 元
-- $C^m$ 光滑元
-- $H^1$ 协调与非协调虚单元方法
+- Cm 光滑元
+- H1 协调与非协调虚单元方法
 
 
 ## 发表论文
@@ -82,17 +81,3 @@ ment Methods for Fourth-Order Phase-Field Models in Fracture Analysis;
 Applied Mathematics Letters; 已投稿
 
 
-<script>
-// 确保KaTeX只渲染特定元素（可选）
-document.addEventListener("DOMContentLoaded", function() {
-    renderMathInElement(document.body, {
-        delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false},
-            {left: '\\(', right: '\\)', display: false},
-            {left: '\\[', right: '\\]', display: true}
-        ],
-        throwOnError: false
-    });
-});
-</script>
