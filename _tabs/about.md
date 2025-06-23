@@ -58,26 +58,25 @@ order: 4
 
 ## 发表论文
 
-1. **C. Chen**, R. Guo, and H. Wei. The VEM for time-harmonic Maxwell
-equations in inhomogeneous media with Lipschitz interface. Mathematical
-Models and Methods in Applied Sciences, 2025.
+1. **C. Chen**, R. Guo, and H. Wei. The VEM for time-harmonic Maxwell equations
+   in inhomogeneous media with Lipschitz interface. Mathematical Models and
+   Methods in Applied Sciences, 35(8): 1717-1761, 2025.
 2. **C. Chen**, X. Huang, and H. Wei. Virtual element methods without ex-
-trinsic stabilization. SIAM Journal on Numerical Analysis, 62(1):567–591,
-2024.
+   trinsic stabilization. SIAM Journal on Numerical Analysis, 62(1):567–591,
+   2024.
 3. **C. Chen**, L. Chen, X. Huang and H. Wei. Geometric Decomposition and
-Efficient Implementation of High Order Face and Edge Elements. Com-
-munications in Computational Physics, 35(4):1045-1072, 2024.
-4. H. Wei, X. Wang, **C. Chen** and K. Jiang. An adaptive virtual element
-method for the polymeric self-consistent field theory, Computers & Math-
-ematics with Applications, 141:242-254, 2023.
-5. **C. Chen**, X. Huang, H. Wei. Hm-Conforming Virtual Elements in Ar-
-bitrary Dimension[J]. SIAM Journal on Numerical Analysis, 60(6): 3099-
-3123, 2022.
-6. T. Tian, **C. Chen**, L. He, and H. Wei. Adaptive Finite Element Method for
-Phase Field Fracture Models Based on Recovery Error Estimates; Journal
-of Computational and Applied Mathematics; 已接收.
+   Efficient Implementation of High Order Face and Edge Elements. Com-
+   munications in Computational Physics, 35(4):1045-1072, 2024.
+4. H. Wei, X. Wang, **C. Chen** and K. Jiang. An adaptive virtual element method
+   for the polymeric self-consistent field theory, Computers & Math- ematics
+   with Applications, 141:242-254, 2023.
+5. **C. Chen**, X. Huang, H. Wei. Hm-Conforming Virtual Elements in Ar- bitrary
+   Dimension[J]. SIAM Journal on Numerical Analysis, 60(6): 3099- 3123, 2022.
+6. T. Tian, **C. Chen**, L. He, and H. Wei. Adaptive Finite Element Method
+   for Phase Field Fracture Models Based on Recovery Error Estimates; Journal of
+   Computational and Applied Mathematics; 已接收.
 7. T. Tian, **C. Chen**, and H. Wei. High-Order Interior Penalty Finite Ele-
-ment Methods for Fourth-Order Phase-Field Models in Fracture Analysis;
-Applied Mathematics Letters; 已投稿
+   ment Methods for Fourth-Order Phase-Field Models in Fracture Analysis;
+   Applied Mathematics Letters; 已投稿
 
 
