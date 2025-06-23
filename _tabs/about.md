@@ -5,12 +5,6 @@ order: 4
 katex: true
 ---
 
-<link rel="stylesheet" href="/assets/katex/katex.min.css">
-<script defer src="/assets/katex/katex.min.js">
-</script>
-<script defer src="/assets/katex/auto-render.js" onload="renderMathInElement(document.body);">
-</script>
-
 <div style="display: flex; gap: 20px; align-items: center;">
   <!-- 左侧文字信息 -->
   <div style="flex: 1;">
@@ -54,8 +48,6 @@ katex: true
 - 2024年 湖南计算数学应用软件学会一等奖
 - 2023年 国家奖学金
 
-## 发表论文
-
 ## 开源贡献
 作为核心开发者参与开发开源 CAX 共性基础算法库 [FEALPy](https://github.com/weihuayi/fealpy)，
 主要负责有限元模块开发，实现了包括：
@@ -63,6 +55,31 @@ katex: true
 - Hu-Zhang 元
 - $C^m$ 光滑元
 - $H^1$ 协调与非协调虚单元方法
+
+
+## 发表论文
+
+1. **C. Chen**, R. Guo, and H. Wei. The VEM for time-harmonic Maxwell
+equations in inhomogeneous media with Lipschitz interface. Mathematical
+Models and Methods in Applied Sciences, 2025.
+2. **C. Chen**, X. Huang, and H. Wei. Virtual element methods without ex-
+trinsic stabilization. SIAM Journal on Numerical Analysis, 62(1):567–591,
+2024.
+3. **C. Chen**, L. Chen, X. Huang and H. Wei. Geometric Decomposition and
+Efficient Implementation of High Order Face and Edge Elements. Com-
+munications in Computational Physics, 35(4):1045-1072, 2024.
+4. H. Wei, X. Wang, **C. Chen** and K. Jiang. An adaptive virtual element
+method for the polymeric self-consistent field theory, Computers & Math-
+ematics with Applications, 141:242-254, 2023.
+5. **C. Chen**, X. Huang, H. Wei. Hm-Conforming Virtual Elements in Ar-
+bitrary Dimension[J]. SIAM Journal on Numerical Analysis, 60(6): 3099-
+3123, 2022.
+6. T. Tian, **C. Chen**, L. He, and H. Wei. Adaptive Finite Element Method for
+Phase Field Fracture Models Based on Recovery Error Estimates; Journal
+of Computational and Applied Mathematics; 已接收.
+7. T. Tian, **C. Chen**, and H. Wei. High-Order Interior Penalty Finite Ele-
+ment Methods for Fourth-Order Phase-Field Models in Fracture Analysis;
+Applied Mathematics Letters; 已投稿
 
 
 <script>
