@@ -5,11 +5,31 @@
   If the number of TAB files has changed, the following variable is required.
   And it must be defined before `@import`.
 */
-$tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
+$tab-count: 2; // home and learning notes
 
 @import "{{ site.theme }}";
 
 /* append your custom style below */
+
+/* Frame the portrait around the face within the circular sidebar avatar. */
+#sidebar #avatar > a {
+    position: relative;
+}
+
+#sidebar #avatar img {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    max-width: none;
+    left: -90%;
+    top: -40%;
+    object-fit: cover;
+    transform-origin: 70% 45%;
+}
+
+#sidebar #avatar img:hover {
+    transform: scale(1.08);
+}
 
 /*
 body {
@@ -83,13 +103,6 @@ body {
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
 }
-
-
-
-
-
-
-
 
 
 

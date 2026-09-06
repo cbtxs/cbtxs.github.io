@@ -1,6 +1,6 @@
 ---
 layout: page
-# The Home page layout
+# The learning notes list layout
 ---
 
 {% include lang.html %}
@@ -10,6 +10,7 @@ layout: page
 
 {% assign posts = "" | split: "" %}
 
+{% if paginator %}
 <!-- Get pinned posts -->
 
 {% assign offset = paginator.page | minus: 1 | times: paginator.per_page %}
@@ -41,7 +42,13 @@ layout: page
   {% endfor %}
 {% endif %}
 
+{% else %}
+  {% assign posts = pinned | concat: default %}
+{% endif %}
+
 <div id="post-list">
+
+<h1 class="dynamic-title">{{ page.title }}</h1>
 
 {% for post in posts %}
 

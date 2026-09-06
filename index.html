@@ -1,5 +1,9 @@
 ---
-layout: home
-# Index page
+layout: page
+title: 个人简介
+show_panel: false
+mathjax: true
 ---
 
+{% capture profile %}{% include profile.md %}{% endcapture %}
+{{ profile | markdownify }}
