@@ -39,6 +39,9 @@ layout: default
   {% unless page.show_panel == false %}
   <div id="panel-wrapper" class="col-xl-3 pl-2 text-muted">
 
+    {% if page.layout == 'post' or page.url == '/' %}
+      {% include toc.html content=_content %}
+    {% else %}
     <div class="access">
       {% include update-list.html %}
       {% include trending-tags.html %}
@@ -48,6 +51,7 @@ layout: default
       {% assign _include_path = _include | append: '.html' %}
       {% include {{ _include_path }} %}
     {% endfor %}
+    {% endif %}
   </div>
   {% endunless %}
 

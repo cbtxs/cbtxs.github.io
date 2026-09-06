@@ -8,7 +8,14 @@
 
     {% assign paths = page.url | split: '/' %}
 
-    {% if paths.size == 0 %}
+    {% if page.layout == 'home' %}
+      <span>Study Notes</span>
+
+    {% elsif page.layout == 'post' %}
+      <span><a href="{{ '/notes/' | relative_url }}">Study Notes</a></span>
+      <span>{{ page.title | escape }}</span>
+
+    {% elsif paths.size == 0 %}
       <!-- index page -->
       <span>{{ site.data.locales[lang].tabs.home | capitalize }}</span>
 

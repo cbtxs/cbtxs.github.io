@@ -11,6 +11,34 @@ $tab-count: 2; // home and learning notes
 
 /* append your custom style below */
 
+/* Expand subsection links only for the current section. */
+#toc .nav .nav {
+    display: none;
+    padding-left: 0.8rem;
+}
+
+#toc .nav-link.active + .nav {
+    display: block;
+}
+
+#toc-wrapper {
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+}
+
+/* Formula previews need their natural height, including fractions and matrices. */
+#post-list .post-content > p {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+}
+
+#post-list .post-content mjx-container[display="true"] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+
 /* Frame the portrait around the face within the circular sidebar avatar. */
 #sidebar #avatar > a {
     position: relative;
@@ -103,10 +131,6 @@ body {
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
 }
-
-
-
-
 
 
 
