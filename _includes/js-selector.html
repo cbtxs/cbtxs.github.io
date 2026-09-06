@@ -91,10 +91,10 @@
 {% endif %}
 
 {% if page.katex %}
-    <link rel="stylesheet" href="../../../assets/katex/katex.min.css">
-    <script defer src="../../../assets/katex/katex.min.js">
+    <link rel="stylesheet" href="{{ '/assets/katex/katex.min.css' | relative_url }}">
+    <script defer src="{{ '/assets/katex/katex.min.js' | relative_url }}">
     </script>
-    <script defer src="../../../assets/katex/auto-render.js" onload="renderMathInElement(document.body);">
+    <script defer src="{{ '/assets/katex/auto-render.js' | relative_url }}" onload="renderMathInElement(document.body);">
     </script>    
 {% endif %}
 
