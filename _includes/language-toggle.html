@@ -1,0 +1,6 @@
+{% if page.language_urls %}
+<nav class="language-toggle" aria-label="{% if page.lang == 'en' %}Language{% else %}语言{% endif %}">
+  <a class="language-option{% if page.lang != 'en' %} selected{% endif %}" href="{{ page.language_urls['zh-CN'] | relative_url }}" data-language-switch lang="zh-CN" hreflang="zh-CN"{% if page.lang != 'en' %} aria-current="true"{% endif %}>中文</a>
+  <a class="language-option{% if page.lang == 'en' %} selected{% endif %}" href="{{ page.language_urls.en | relative_url }}" data-language-switch lang="en" hreflang="en"{% if page.lang == 'en' %} aria-current="true"{% endif %}>English</a>
+</nav>
+{% endif %}

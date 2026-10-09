@@ -61,6 +61,8 @@ test() {
     --check-html \
     --allow_hash_href \
     "$SITE_DIR"
+
+  bundle exec ruby tools/check_languages.rb "$SITE_DIR$_baseurl" "$_baseurl"
 }
 
 resume_site_dir() {

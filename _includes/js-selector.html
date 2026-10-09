@@ -32,7 +32,7 @@
   {% if site.prefer_datetime_locale %}
     {% assign locale = site.prefer_datetime_locale | downcase %}
   {% else %}
-    {% assign locale = site.lang | split: '-' | first %}
+    {% assign locale = page.lang | default: site.lang | split: '-' | first %}
   {% endif %}
 
   {% assign _urls = site.data.assets[origin].dayjs.js.common

@@ -2,10 +2,12 @@
   The Side Bar
 -->
 
+{% assign profile_url = '/' %}
+{% if page.lang == 'en' %}{% assign profile_url = '/en/' %}{% endif %}
 <div id="sidebar" class="d-flex flex-column align-items-end">
   <div class="profile-wrapper text-center">
     <div id="avatar">
-      <a href="{{ '/' | relative_url }}" alt="avatar" class="mx-auto">
+      <a href="{{ profile_url | relative_url }}" alt="avatar" class="mx-auto">
         {% if site.avatar != empty and site.avatar %}
           {% capture avatar_url %}
             {% if site.avatar contains '://' %}
@@ -16,31 +18,31 @@
               {{ site.avatar | relative_url }}
             {% endif %}
           {% endcapture %}
-          <img src="{{ avatar_url }}" alt="avatar" onerror="this.style.display='none'">
+          <img src="{{ avatar_url | strip }}" alt="avatar" onerror="this.style.display='none'">
         {% endif %}
       </a>
     </div>
 
     <div class="site-title mt-3">
-      <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a href="{{ profile_url | relative_url }}">{{ site.title }}</a>
     </div>
-    <div class="site-subtitle font-italic">{{ site.tagline }}</div>
+    <div class="site-subtitle font-italic">{% if page.lang == 'en' %}Postdoctoral researcher at Peking University{% else %}{{ site.tagline }}{% endif %}</div>
 
   </div><!-- .profile-wrapper -->
 
   <ul class="w-100">
 
     <!-- home -->
-    <li class="nav-item{% if page.url == '/' %}{{ " active" }}{% endif %}">
-      <a href="{{ '/' | relative_url }}" class="nav-link">
-        <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>Home</span>
+    <li class="nav-item{% if page.profile %} active{% endif %}">
+      <a href="{{ profile_url | relative_url }}" class="nav-link">
+        <i class="fa-fw fas fa-user ml-xl-3 mr-xl-3 unloaded"></i>
+        <span>{% if page.lang == 'zh-CN' %}个人简介{% else %}Profile{% endif %}</span>
       </a>
     </li>
-    <li class="nav-item{% if page.layout == 'home' %} active{% endif %}">
+    <li class="nav-item{% if page.layout == 'home' or page.layout == 'post' %} active{% endif %}">
       <a href="{{ '/notes/' | relative_url }}" class="nav-link">
         <i class="fa-fw fas fa-book-open ml-xl-3 mr-xl-3 unloaded"></i>
-        <span>Study Notes</span>
+        <span>{% if page.lang == 'en' %}Study Notes{% else %}学习笔记{% endif %}</span>
       </a>
     </li>
 

@@ -6,13 +6,17 @@
   <div id="topbar" class="col-11 d-flex h-100 align-items-center justify-content-between">
     <span id="breadcrumb">
 
-    {% assign paths = page.url | split: '/' %}
+    {% assign breadcrumb_path = page.language_path | default: page.url %}
+    {% assign paths = breadcrumb_path | split: '/' %}
 
-    {% if page.layout == 'home' %}
-      <span>Study Notes</span>
+    {% if page.profile %}
+      <span>{{ page.title }}</span>
+
+    {% elsif page.layout == 'home' %}
+      <span>{% if page.lang == 'en' %}Study Notes{% else %}学习笔记{% endif %}</span>
 
     {% elsif page.layout == 'post' %}
-      <span><a href="{{ '/notes/' | relative_url }}">Study Notes</a></span>
+      <span><a href="{{ '/notes/' | relative_url }}">{% if page.lang == 'en' %}Study Notes{% else %}学习笔记{% endif %}</a></span>
       <span>{{ page.title | escape }}</span>
 
     {% elsif paths.size == 0 %}
@@ -26,7 +30,7 @@
         {% if forloop.first %}
           <span>
             <a href="{{ '/' | relative_url }}">
-              {{ site.data.locales[lang].tabs.home | capitalize }}
+              {% if page.lang == 'zh-CN' %}个人简介{% else %}Profile{% endif %}
             </a>
           </span>
 
@@ -41,7 +45,7 @@
         {% elsif page.layout == 'category' or page.layout == 'tag' %}
           <span>
             <a href="{{ '/notes/' | relative_url }}">
-              Study Notes
+              {% if page.lang == 'en' %}Study Notes{% else %}学习笔记{% endif %}
             </a>
           </span>
         {% endif %}
@@ -55,8 +59,8 @@
     <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i>
 
     <div id="topbar-title">
-      {% if page.url == '/' %}
-        {{- site.data.locales[lang].title | default: site.title -}}
+      {% if page.profile %}
+        {{- page.title -}}
       {% elsif page.layout == 'home' %}
         {{- page.title -}}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}
@@ -66,6 +70,8 @@
         {{- site.data.locales[lang].layout[page.layout] | default: page.layout | capitalize -}}
       {% endif %}
     </div>
+
+    {% include language-toggle.html %}
 
     <i id="search-trigger" class="fas fa-search fa-fw"></i>
     <span id="search-wrapper" class="align-items-center">

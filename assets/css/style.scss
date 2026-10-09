@@ -11,6 +11,119 @@ $tab-count: 2; // home and learning notes
 
 /* append your custom style below */
 
+/* Keep the English profile readable and its interface typography consistent. */
+html[lang="en"] {
+    --english-body-font: 'Source Serif 4', Georgia, 'Microsoft Yahei', serif;
+    --english-ui-font: 'Source Sans 3', Arial, 'Microsoft Yahei', sans-serif;
+
+    body {
+        font-family: var(--english-ui-font);
+    }
+
+    .post-content {
+        font-family: var(--english-body-font);
+        font-size: 1.1rem;
+        line-height: 1.65;
+        font-optical-sizing: auto;
+    }
+
+    h1, h2, h3, h4, h5, h6,
+    .pagination, .post-meta, .panel-heading,
+    #sidebar, #topbar, #toc, footer {
+        font-family: var(--english-ui-font);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 600;
+    }
+
+    .post-content strong {
+        font-weight: 600;
+    }
+
+    .post-content .theorem::before,
+    .post-content .property::before,
+    .post-content .proof::before,
+    .post-content .definition::before {
+        font-family: var(--english-body-font);
+    }
+
+    #sidebar .site-title a {
+        font-weight: 700;
+    }
+
+    #sidebar .site-subtitle {
+        font-style: normal !important;
+        line-height: 1.45;
+        word-spacing: normal;
+    }
+}
+
+.profile-intro {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.profile-intro-text,
+.profile-intro-photo {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-intro-photo {
+    text-align: center;
+}
+
+#topbar .language-toggle {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 2px;
+    margin-left: auto;
+    margin-right: 0.75rem;
+    padding: 3px;
+    border: 1px solid var(--main-border-color);
+    border-radius: 1.2rem;
+    background: var(--main-bg);
+}
+
+#topbar .language-option {
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    color: var(--text-muted-color);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#topbar .language-option.selected {
+    color: var(--btn-text-color);
+    background: var(--btn-paginator-hover-color);
+    font-weight: 600;
+}
+
+#topbar .language-option:focus-visible {
+    outline: 2px solid var(--link-color);
+    outline-offset: 2px;
+}
+
+#topbar:has(#search-wrapper.d-flex) .language-toggle {
+    display: none;
+}
+
+@media (max-width: 575.98px) {
+    .profile-intro {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .profile-intro-photo img {
+        max-height: 18rem;
+        width: auto;
+    }
+}
+
 /* Expand subsection links only for the current section. */
 #toc .nav .nav {
     display: none;
@@ -131,9 +244,6 @@ body {
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
 }
-
-
-
 
 
 
