@@ -13,5 +13,5 @@
 ### {% if page.lang == "en" %}Submitted{% else %}投稿中{% endif %}
 
 1. T. Tian, **C. Chen**, and H. Wei. High-Order Interior Penalty Finite Element Methods for Fourth-Order Phase-Field Models in Fracture Analysis; Applied Mathematics Letters; {% if page.lang == "en" %}Submitted{% else %}已投稿{% endif %}. [arXiv](https://arxiv.org/abs/2504.09810).
-2. **C. Chen**, L. Chen, and X. Huang. Explicit Planar Finite Element Elasticity Complexes and $C^1$ Elements on Barycentric Refinements. SIAM Journal on Numerical Analysis; {% if page.lang == "en" %}Submitted{% else %}已投稿{% endif %}. [arXiv](https://arxiv.org/abs/2604.26701).
-3. **C. Chen**, L. Chen, T. Gao, X. Huang, and H. Wei. Implementation and Basis Construction for Smooth Finite Element Spaces. Communications in Computational Physics; {% if page.lang == "en" %}Submitted{% else %}已投稿{% endif %}. [arXiv](https://arxiv.org/abs/2507.19732).
+2. **C. Chen**, L. Chen, and X. Huang. Explicit Planar Finite Element Elasticity Complexes and $C^1$ Elements on Barycentric Refinements. SIAM Journal on Numerical Analysis; {% if page.lang == "en" %}Revised manuscript submitted after the first round of review{% else %}一审返修稿已提交{% endif %}. [arXiv](https://arxiv.org/abs/2604.26701).
+3. **C. Chen**, L. Chen, T. Gao, X. Huang, and H. Wei. Implementation and Basis Construction for Smooth Finite Element Spaces. Communications in Computational Physics; {% if page.lang == "en" %}Revised manuscript submitted after the first round of review{% else %}一审返修稿已提交{% endif %}. [arXiv](https://arxiv.org/abs/2507.19732).

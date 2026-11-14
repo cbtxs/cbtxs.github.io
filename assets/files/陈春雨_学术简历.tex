@@ -1,0 +1,81 @@
+% 使用 XeLaTeX 编译；例如：xelatex 陈春雨_学术简历.tex
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{needspace}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\linespread{1.08}
+\setcounter{secnumdepth}{0}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{8pt}{5pt}
+\setlist[enumerate]{leftmargin=1.7em,label=\arabic*.,itemsep=6pt,parsep=0pt,topsep=4pt}
+\newcommand{\datedentry}[2]{\par\noindent\makebox[3.5cm][l]{#1}#2\par}
+\begin{document}
+\pagestyle{empty}
+\begin{center}
+{\LARGE\bfseries 陈春雨}
+\end{center}
+\textbf{北京大学数学科学学院\quad 博士后}\\
+邮箱：\href{mailto:cbtxs@smail.xtu.edu.cn}{cbtxs@smail.xtu.edu.cn}\\
+个人主页：\url{https://cbtxs.github.io/en/}\quad
+GitHub：\url{https://github.com/cbtxs}
+
+\section{研究方向}
+新型有限元方法（张量有限元与分布有限元）；虚单元方法的理论与应用；引力波数值模拟；工业仿真软件与高阶有限元算法开发。
+
+\section{工作与访问经历}
+\datedentry{2025.07—至今}{北京大学数学科学学院  博士后}
+\datedentry{2025.01—2025.05}{美国加州大学尔湾分校数学系  访问学者}
+\section{教育经历}
+\datedentry{2021.09—2025.06}{湘潭大学数学与计算科学学院  博士}
+\datedentry{2019.09—2021.06}{湘潭大学数学与计算科学学院  硕士}
+\datedentry{2015.09—2019.06}{河南师范大学数学与信息科学学院  本科}
+\section{科研项目}
+\textbf{国家自然科学基金青年科学基金项目（C类）｜主持}
+
+线弹性高阶混合有限元方法及快速算法；2026年获批；资助金额30万元。
+
+\textbf{中国博士后科学基金面上项目｜主持}
+
+线弹性问题的 hp 自适应混合有限元方法；2025年获批；资助金额8万元。
+
+\textbf{华为技术有限公司委托开发项目｜主要参与人}
+
+自适应网格优化及新型有限元算法委托开发；2022.06—2023.06；项目总经费62.933万元；已结题。
+
+\section{开源软件与专业技能}
+\textbf{FEALPy核心开发者}
+
+参与面向CAX应用的基础算法开源库开发，主要负责BDM、RT、Nédélec及Hu–Zhang有限元，$C^m$光滑有限元，以及$H^1$协调与非协调虚单元模块。
+
+熟练使用Python与C++进行数值算法开发；熟悉有限元与虚单元方法的理论、实现及应用，具有高阶有限元基函数构造及开源科学计算软件开发经验。
+
+\section{荣誉奖励}
+\datedentry{2025年}{湘潭大学校长奖学金}
+\datedentry{2025年}{湘潭大学优秀毕业生}
+\datedentry{2025年}{中国科协青年人才托举工程博士生专项计划}
+\datedentry{2024年}{湖南省计算数学与应用软件学会一等奖}
+\datedentry{2024年}{国家奖学金}
+\datedentry{2023年}{国家奖学金}
+\section{学术论文}
+\subsection{已发表论文}
+\begin{enumerate}
+\item \textbf{C. Chen}, R. Guo, H. Wei. The VEM for time-harmonic Maxwell equations in inhomogeneous media with Lipschitz interface. Mathematical Models and Methods in Applied Sciences, 35(8): 1717–1761, 2025.
+\item \textbf{C. Chen}, X. Huang, H. Wei. Virtual element methods without extrinsic stabilization. SIAM Journal on Numerical Analysis, 62(1): 567–591, 2024.
+\item \textbf{C. Chen}, L. Chen, X. Huang, H. Wei. Geometric Decomposition and Efficient Implementation of High Order Face and Edge Elements. Communications in Computational Physics, 35(4): 1045–1072, 2024.
+\item \textbf{C. Chen}, X. Huang, H. Wei. $H^m$-Conforming Virtual Elements in Arbitrary Dimension. SIAM Journal on Numerical Analysis, 60(6): 3099–3123, 2022.
+\item H. Wei, X. Wang, \textbf{C. Chen}, K. Jiang. An adaptive virtual element method for the polymeric self-consistent field theory. Computers \& Mathematics with Applications, 141: 242–254, 2023.
+\item T. Tian, \textbf{C. Chen}, L. He, H. Wei. Adaptive finite element method for phase field fracture models based on recovery error estimates. Journal of Computational and Applied Mathematics, 472: 116732, 2026.
+\item Y. Zheng, H. Wei, Y. Huang, \textbf{C. Chen}, T. Tian, H. Liu, W. Wang, L. He. FEALPy: A Cross-Platform Intelligent Numerical Simulation Engine. Communications in Computational Physics, 40(5): 1676–1704, 2026.
+\end{enumerate}
+\subsection{在投论文}
+\begin{enumerate}
+\item \textbf{C. Chen}, L. Chen, X. Huang. Explicit Planar Finite Element Elasticity Complexes and $C^1$ Elements on Barycentric Refinements. 投稿至 SIAM Journal on Numerical Analysis；一审返修稿已提交。
+\item \textbf{C. Chen}, L. Chen, T. Gao, X. Huang, H. Wei. Implementation and Basis Construction for Smooth Finite Element Spaces. 投稿至 Communications in Computational Physics；一审返修稿已提交。
+\end{enumerate}
+\end{document}

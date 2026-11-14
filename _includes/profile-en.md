@@ -39,12 +39,19 @@
 
 ### Research Grants
 
-- **National Natural Science Foundation of China — Young Scientists Fund (Category C)**: High-Order Mixed Finite Element Methods and Fast Algorithms for Linear Elasticity. Awarded in 2026; principal investigator; funding: CNY 300,000.
-- **China Postdoctoral Science Foundation — General Program**: $hp$-Adaptive Mixed Finite Element Methods for Linear Elasticity. Awarded in 2025; principal investigator; funding: CNY 80,000.
+**National Natural Science Foundation of China — Young Scientists Fund (Category C) | Principal Investigator**  
+Project title: High-Order Mixed Finite Element Methods and Fast Algorithms for Linear Elasticity  
+Award year: 2026; funding: CNY 300,000.
+
+**China Postdoctoral Science Foundation — General Program | Principal Investigator**  
+Project title: $hp$-Adaptive Mixed Finite Element Methods for Linear Elasticity  
+Award year: 2025; funding: CNY 80,000.
 
 ### Industry-Sponsored Projects
 
-- **Commissioned Development of Adaptive Mesh Optimization and Novel Finite Element Algorithms**, commissioned by Huawei Technologies Co., Ltd., 2022.06–2023.06. Role: major contributor; total project funding: CNY 629,330; completed.
+**Huawei Technologies Co., Ltd. — Commissioned Development Project | Major Contributor**  
+Project title: Commissioned Development of Adaptive Mesh Optimization and Novel Finite Element Algorithms  
+Project period: 2022.06–2023.06; total project funding: CNY 629,330; completed.
 
 ## Honors and Awards
 
